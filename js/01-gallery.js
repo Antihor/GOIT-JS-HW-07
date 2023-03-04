@@ -6,6 +6,16 @@ const galleryRef = document.querySelector(".gallery");
 const markup = createGallery(galleryItems);
 galleryRef.insertAdjacentHTML("afterbegin", markup);
 
+/*<div class="gallery__item">
+  <a class="gallery__link" href="large-image.jpg">
+    <img
+      class="gallery__image"
+      src="small-image.jpg"
+      data-source="small-image.jpg"
+      alt="Image description"
+    />
+  </a>
+</div>;*/
 function createGallery(galleryItems) {
   return galleryItems
     .map(({ preview, original, description }) => {
@@ -33,3 +43,11 @@ galleryRef.addEventListener("click", (ev) => {
   );
   instance.show();
 });
+
+/*galleryRef.addEventListener("keydown", onClose);
+
+function onClose(ev) {
+  if (ev.target.code === "Escape") {
+    instance.close();
+  }
+}*/
